@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block nothing — this is a simple brochure site
+Disallow:
+
+# Sitemap location
+Sitemap: https://drjainhomeopathy.in/sitemap.xml
