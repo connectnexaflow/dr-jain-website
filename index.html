@@ -466,6 +466,15 @@ img{max-width:100%;display:block}
 .navbar-toggler{border:1px solid var(--border);border-radius:var(--radius-sm);padding:6px 10px}
 .navbar-toggler:focus{box-shadow:none}
 
+@media (max-width: 767px) {
+  .dr-photo {
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: center top;
+    width: 100%;
+  }
+}
+
 @media(max-width:991px){
   :root{--section-pad:72px 0}
   .about-info-card{left:0;bottom:-20px}
@@ -782,9 +791,7 @@ img{max-width:100%;display:block}
          <img 
   src="dr-abhishek-jain.webp" 
   alt="Dr. Abhishek Jain BHMS – Best Homeopathy Doctor in Lucknow, Kapoorthala"
-  width="600" height="750"
-  loading="eager"
-  style="border-radius:32px; box-shadow:0 16px 48px rgba(26,61,46,0.14); width:100%; display:block; object-fit:cover; aspect-ratio:4/5;"
+  loading="eager" class="dr-photo"
 >
           <div class="about-info-card">
             <div class="info-card-icon"><i class="fas fa-phone-alt"></i></div>
