@@ -430,14 +430,24 @@ img { max-width: 100%; display: block; }
 /* ── TESTIMONIALS ── */
 .testimonials-section { background: var(--cream); }
 
+/* 2×2 fixed grid — never shifts on expand */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* ── Testimonial card ── */
 .testimonial-card-small {
   background: #ffffff;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 28px;
-  height: 100%;
-  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
   position: relative;
+  transition: all var(--transition);
 }
 .testimonial-card-small::before {
   content: '"';
@@ -455,6 +465,7 @@ img { max-width: 100%; display: block; }
   box-shadow: var(--shadow-md);
   border-color: var(--green-mist);
 }
+
 .testimonial-card-small .testimonial-stars {
   color: var(--gold);
   font-size: 16px;
@@ -462,19 +473,143 @@ img { max-width: 100%; display: block; }
   margin-bottom: 14px;
   display: block;
 }
+
+/* Preview text — faded, fixed height, never expands */
+.testimonial-text-wrapper {
+  overflow: hidden;
+  max-height: 96px;
+  -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+  flex: 1;
+}
+
+/* Short reviews: remove fade mask */
+.testimonial-text-wrapper.no-truncate {
+  max-height: none;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
 .testimonial-card-small p {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: 15.5px;
+  font-size: 15px;
   color: var(--text-mid);
   line-height: 1.75;
-  margin-bottom: 18px;
+  margin: 0;
 }
+
 .testimonial-card-small strong {
   font-size: 13px;
   font-weight: 700;
   color: var(--green-deep);
   letter-spacing: 0.03em;
+  margin-top: 14px;
+  display: block;
+}
+
+/* Read More button */
+.read-more-btn {
+  background: none;
+  border: none;
+  color: var(--green-sage);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 0 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  letter-spacing: 0.02em;
+  transition: color var(--transition);
+  font-family: var(--font-body);
+}
+.read-more-btn:hover { color: var(--green-deep); }
+
+/* ── Review Modal ── */
+.review-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.50);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.review-modal-overlay.active {
+  display: flex;
+}
+
+.review-modal-box {
+  background: var(--cream);
+  border-radius: var(--radius-xl);
+  max-width: 660px;
+  width: 100%;
+  max-height: 82vh;
+  overflow-y: auto;
+  padding: 2.4rem 2.4rem 2rem;
+  position: relative;
+  box-shadow: 0 24px 72px rgba(26,61,46,0.22);
+  border: 1px solid var(--border);
+  animation: modalFadeIn 0.25s cubic-bezier(0.4,0,0.2,1);
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translateY(20px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0)   scale(1); }
+}
+
+.review-modal-box .modal-stars {
+  color: var(--gold);
+  font-size: 18px;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.review-modal-box .modal-text {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 15.5px;
+  line-height: 1.85;
+  color: var(--text-mid);
+  white-space: pre-line;
+}
+
+.review-modal-box .modal-author {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  font-weight: 700;
+  color: var(--green-deep);
+  font-size: 14px;
+  letter-spacing: 0.03em;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.4rem;
+  background: var(--green-haze);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--green-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition), color var(--transition);
+  line-height: 1;
+}
+.modal-close-btn:hover {
+  background: var(--green-deep);
+  color: #ffffff;
 }
 
 /* ── FOOTER ── */
@@ -558,6 +693,27 @@ img { max-width: 100%; display: block; }
 }
 .footer-bottom a:hover { color: var(--gold); }
 
+/* ── MISC ── */
+.about-info-card,
+.clinic-hours-card {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.heartbeat {
+  color: #ff0000;
+  display: inline-block;
+  animation: heartbeat 1.2s ease-in-out infinite;
+}
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  15%       { transform: scale(1.3); }
+  30%       { transform: scale(1); }
+  45%       { transform: scale(1.3); }
+  60%       { transform: scale(1); }
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 991px) {
   .about-image-block::before { display: none; }
@@ -566,6 +722,16 @@ img { max-width: 100%; display: block; }
     position: static;
     margin-top: 60px;
     width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+  .review-modal-box {
+    padding: 1.6rem 1.4rem 1.4rem;
+    border-radius: var(--radius-lg);
   }
 }
 
@@ -587,23 +753,4 @@ img { max-width: 100%; display: block; }
   }
   .container { padding-left: 16px; padding-right: 16px; }
   .row { margin-left: 0; margin-right: 0; }
-}
-.about-info-card,
-.clinic-hours-card {
-  animation: none !important;
-  opacity: 1 !important;
-  transform: none !important;
-}
-
-.heartbeat {
-  color: #ff0000;
-  display: inline-block;
-  animation: heartbeat 1.2s ease-in-out infinite;
-}
-@keyframes heartbeat {
-  0%, 100% { transform: scale(1); }
-  15% { transform: scale(1.3); }
-  30% { transform: scale(1); }
-  45% { transform: scale(1.3); }
-  60% { transform: scale(1); }
 }
