@@ -252,6 +252,35 @@ const statObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.4 });
 
 statCounts.forEach(el => statObserver.observe(el));
+
+function toggleReview(id, btn) {
+    const wrapper = document.getElementById(id);
+    const isCollapsed = wrapper.classList.contains('collapsed');
+    wrapper.classList.toggle('collapsed', !isCollapsed);
+    wrapper.classList.toggle('expanded', isCollapsed);
+    btn.textContent = isCollapsed ? 'Read Less ▴' : 'Read More ▾';
+}
+
+function openReviewModal(stars, textId, author) {
+    document.getElementById('modalStars').textContent = stars;
+    document.getElementById('modalText').textContent = document.getElementById(textId).textContent.trim();
+    document.getElementById('modalAuthor').textContent = author;
+    document.getElementById('reviewModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeReviewModal() {
+    document.getElementById('reviewModal').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function closeModalOnOverlay(e) {
+    if (e.target === document.getElementById('reviewModal')) closeReviewModal();
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeReviewModal();
+});
 /* ============================================================
    REQUIRED CSS ADDITIONS — paste into your <style> block
    (replaces the conflicting display:flex on .hero-slide)
