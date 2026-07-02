@@ -264,7 +264,7 @@
                     <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html#appointment-form" target="_blank" rel="noopener">Contact</a></li>
                     <li class="nav-item ms-lg-3">
-                        <a href="index.html#appointment-form" class="btn btn-primary nav-appt-btn">Book Appointment</a>
+                        <a href="book-appointment.html" class="btn btn-primary nav-appt-btn">Book Appointment</a>
                     </li>
                 </ul>
             </div>
@@ -363,44 +363,92 @@
         </div>
     </section>
     <!-- Testimonials -->
-    <section class="testimonials-section section-padding">
-        <div class="container">
-            <div class="section-header text-center mb-5">
-                <span class="section-eyebrow">Patient Stories</span>
-                <h2 id="testimonials" class="section-title">What Patients Say About Us</h2>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-6">
-                    <div class="testimonial-card-small">
-                        <div class="testimonial-stars">★★★★★</div>
-                        <p>"Dr. Abhishek Jain uses holistic approach to healing. He is a good listener and quite empathetic. He is undoubtedly the best homeopathic practitioner. I would highly recommend to everyone."</p>
-                        <strong>— Amrita</strong>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="testimonial-card-small">
-                        <div class="testimonial-stars">★★★★★</div>
-                        <p>"My wife was suffering from PCOD. Dr. Abhishek Jain does miracle with his meds, which no allopathic doctors can do. He is genius. Thank you Dr. Abhishek jain."</p>
-                        <strong>— Raj Malhotra</strong>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="testimonial-card-small">
-                        <div class="testimonial-stars">★★★★★</div>
-                        <p>"I have consulted Dr. Jain numerous times over the years. He is empathetic, spends significant time to understand issues, and his treatments have always worked out really well for us."</p>
-                        <strong>— Rishi Raman</strong>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="testimonial-card-small">
-                        <div class="testimonial-stars">★★★★★</div>
-                        <p>"Dr Abhishek is best doc. He is so understanding and very patient. His diagnosis and treatment is best and safe. My kidney stones are gone after his treatment."</p>
-                        <strong>— Anupam Agarwal</strong>
-                    </div>
-                </div>
-            </div>
+   <div class="testimonials-grid">
+
+    <!-- Card 1: Pragya -->
+    <div class="testimonial-card-small">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text-wrapper">
+            <p>"It was way back in the year 2002 when we gradually realized that our 6 months old son is neither able to hold his neck nor is able to see properly..."</p>
         </div>
-    </section>
+        <button class="read-more-btn"
+            onclick="openReviewModal('★★★★★', 'pragya-full', '— Pragya')">
+            Read More ▾
+        </button>
+        <strong>— Pragya</strong>
+    </div>
+
+    <!-- Card 2: Raj Malhotra -->
+    <div class="testimonial-card-small">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text-wrapper">
+            <p>"My wife had been struggling with PCOD for several years, and it was an extremely stressful and frustrating journey for our family..."</p>
+        </div>
+        <button class="read-more-btn"
+            onclick="openReviewModal('★★★★★', 'raj-full', '— Raj Malhotra')">
+            Read More ▾
+        </button>
+        <strong>— Raj Malhotra</strong>
+    </div>
+
+    <!-- Card 3: Rishi Raman (short — no Read More needed) -->
+    <div class="testimonial-card-small">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text-wrapper" style="-webkit-mask-image:none;mask-image:none;max-height:none;">
+            <p>"I have consulted Dr. Jain numerous times over the years. He is empathetic, spends significant time to understand issues, and his treatments have always worked out really well for us."</p>
+        </div>
+        <strong>— Rishi Raman</strong>
+    </div>
+
+    <!-- Card 4: Anupam Agarwal (short — no Read More needed) -->
+    <div class="testimonial-card-small">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text-wrapper" style="-webkit-mask-image:none;mask-image:none;max-height:none;">
+            <p>"Dr Abhishek is best doc. He is so understanding and very patient. His diagnosis and treatment is best and safe. My kidney stones are gone after his treatment."</p>
+        </div>
+        <strong>— Anupam Agarwal</strong>
+    </div>
+
+</div>
+
+<!-- Hidden full-text stores (invisible) -->
+<div id="pragya-full" style="display:none;">It was way back in the year 2002 when we gradually realized that our 6 months old son is neither able to hold his neck nor is able to see properly. He used to only respond to the sound and while playing with him on my lap, he occasionally looked at me which was a sign of sorrow to us. His unusually heavy head used to fall back which hampered his movement. He used to give a twitching look with mouth always agape. Our growing anxiety compelled us to knock at the door of several pediatricians in Lucknow, where we came across an unbearable revelation of some other problems in his nervous system. We were informed about consequent delayed milestones that was certainly heartbreaking. We were asked to get his ECT and MRI done. Even after those tests, they could not diagnose the problem and hence advised us "to shower love and compassion as much as we can and have faith in Almighty". Those doctors didn't even realize how frightful the words sounded from their mouth. Instead of showing a ray of hope by suggesting some treatment, they bluntly told us that our son was NOT normal. We were told that the time is the only healer and they could not access exactly how long he would take to show signs of improvement, if any.
+
+The obnoxious meeting with them however gave us courage to face the fact and look for optimism in another trusted medicine called homeopathy. My father-in-law's faith in homeopathy took us to an old family doctor who unfortunately lost his memory shortly. Thereafter, a well wisher and a friend introduced us to Dr. Jain. I shall forever be grateful to her for the same.
+
+My son was about 9 months old in the year 2003 when we began his treatment. I still remember the kind of attention and generous time he had devoted on putting in record the minutest details of my son's family history and his constitution right from his birth. I've never come across such a professional, calm and reassuring doctor. The healing had already begun with this kind of attitude.
+
+Miraculously, within two months my son could look into our eyes and exchanging glances with him became such a proud and precious moment. Our relatives dropped in to see him to believe it. That gave us tremendous confidence to continue his medicine under Dr. Jain's supervision and care. Gradually he began to hold his neck — honestly I didn't regret the delay as I was engrossed in celebrating the positive change in him.
+
+Another major persistent problem — his resistance to oily and heavy food — was also cured permanently. Thereafter, we never looked back and now it has been almost 11 years. When he started writing, he felt weakness in hands that would tire him leaving him dull for the rest of the day. We again got this problem cured by him only.
+
+Trust me, he has never disappointed us at any point of time. People who meet my son after years together are pleasantly surprised to see him change for good. As an indebted patient of revered Dr. Jain, I seek pleasure in expressing my sincere gratitude to him. All our hidden fears have vanished from the core and my life is peaceful now.
+
+Now-a-days, it is really difficult to find a competent doctor like him who takes genuine interest in curing the patient thus, doing justice to homeopathy. He is truly wonderful!!</div>
+
+<div id="raj-full" style="display:none;">My wife had been struggling with PCOD for several years, and it was an extremely stressful and frustrating journey for our family. We consulted multiple doctors, tried different treatments, spent a significant amount of time, money, and effort, but unfortunately the results were either temporary or not satisfactory. Watching her continue to suffer despite trying so many options was heartbreaking.
+
+After a lot of disappointment, we were referred to Dr. Abhishek Jain. By the time we visited him, we had almost lost hope and were simply looking for someone who would genuinely understand the problem and guide us in the right direction.
+
+From our very first consultation, Dr. Jain stood out because of the time he spent understanding her complete medical history, lifestyle, symptoms, and concerns. He listened patiently, explained everything clearly, and gave us confidence that we were finally in the right hands.
+
+As the treatment progressed, we started noticing meaningful improvements in her health and overall well-being. The changes were gradual yet significant, and for the first time in a long while, we felt optimistic about her recovery. His personalized approach and deep understanding of homeopathy made a real difference.
+
+What impressed us most was not only his medical knowledge but also his genuine care, empathy, and commitment to helping patients. He never rushed through consultations and always made us feel comfortable discussing our concerns.
+
+Today, we are extremely grateful that we found Dr. Abhishek Jain. After years of searching for answers, his guidance and treatment brought us the positive results we had been hoping for.
+
+I would highly recommend Dr. Abhishek Jain to anyone looking for a trusted homeopathic doctor in Lucknow for PCOD, hormonal imbalances, thyroid issues, women's health concerns, and other chronic conditions. Thank you, Dr. Jain, for your dedication and for making such a positive impact on our lives.</div>
+
+<!-- Modal -->
+<div class="review-modal-overlay" id="reviewModal" onclick="closeModalOnOverlay(event)">
+    <div class="review-modal-box">
+        <button class="modal-close-btn" onclick="closeReviewModal()">✕</button>
+        <div class="modal-stars" id="modalStars"></div>
+        <div class="modal-text" id="modalText"></div>
+        <div class="modal-author" id="modalAuthor"></div>
+    </div>
+</div>
 
     <!-- Footer -->
     <footer class="site-footer">
