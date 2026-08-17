@@ -220,6 +220,25 @@ body{
   background-attachment:fixed;
 }
 
+/* next blog button */
+  .next-post{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  background:var(--glass);border:1px solid var(--glass-border);backdrop-filter:blur(14px);
+  border-radius:var(--radius);padding:20px 24px;margin:36px 0;box-shadow:var(--shadow);
+  text-decoration:none;transition:transform .15s ease, box-shadow .15s ease;
+}
+.next-post:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(30,59,43,.16)}
+.next-post .np-label{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--green);font-weight:650;margin-bottom:6px}
+.next-post .np-title{font-size:17px;font-weight:650;color:var(--green-deep);line-height:1.4}
+.next-post .np-arrow{
+  flex-shrink:0;width:40px;height:40px;border-radius:50%;background:var(--green-deep);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:18px;
+}
+@media (max-width:560px){
+  .next-post{flex-direction:column;align-items:flex-start;gap:14px}
+  .next-post .np-arrow{align-self:flex-end}
+}
+  
 /* Skip link */
 .skip{position:absolute;left:-999px;top:0;background:var(--green-deep);color:#fff;padding:10px 16px;border-radius:8px;z-index:999}
 .skip:focus{left:16px;top:16px}
@@ -755,6 +774,13 @@ footer.site a:hover{color:#fff}
       <p>This article is for general educational purposes and does not replace individual medical advice, diagnosis or treatment. Always consult a qualified physician for your specific condition.</p>
     </div>
 
+    <a class="next-post" href="https://drjainhomeopathy.in/blog/digestive-health/acidity-gerd-symptoms-causes-homeopathy-treatment/">
+  <div>
+    <div class="np-label">Next Article</div>
+    <div class="np-title">Acidity or GERD? Symptoms, Causes &amp; Homeopathic Treatment in Lucknow</div>
+  </div>
+  <span class="np-arrow">→</span>
+</a>
   </article>
 </div>
 </main>
