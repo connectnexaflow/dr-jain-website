@@ -203,13 +203,6 @@ in the same place (just before </head>).
 }
 </script>
 
-
-<!-- =====================================================================
-STEP 2 (ADD): Visible FAQ section. FAQPage schema is only valid if these
-Q&As are visible on the page. Paste it between the "Why Homeopathy"
-</section> and the "<!-- Testimonials -->" comment. Edit any answer that
-is not true for your clinic, and keep the text identical to the schema.
-===================================================================== -->
 <section class="faq-section section-padding" id="faq">
     <div class="container">
         <div class="section-header text-center mb-5">
@@ -253,20 +246,6 @@ is not true for your clinic, and keep the text identical to the schema.
     </div>
 </section>
 
-
-<!-- =====================================================================
-STEP 3 (FIND / REPLACE): Fix the broken #testimonials anchor
-(your nav and footer link to #testimonials but no element has that id)
-
-FIND:    <div class="testimonials-grid">
-REPLACE: <div class="testimonials-grid" id="testimonials">
-
-STEP 4 (FIND / REPLACE, 3 places): phone links with spaces don't dial reliably
-
-FIND:    href="tel:+91 891 783 3155"
-REPLACE: href="tel:+918917833155"
-===================================================================== -->
-
 </head>
 <body>
     <!-- Topbar -->
@@ -275,7 +254,7 @@ REPLACE: href="tel:+918917833155"
             <div class="row align-items-center">
                 <div class="col-lg-6 d-none d-md-block"><span class="topbar-tagline">Natural Healing, Lasting Wellness</span></div>
                 <div class="col-lg-6 text-md-end text-center">
-                    <a href="tel:+91 891 783 3155" class="topbar-phone"><i class="fas fa-phone-alt me-2"></i>+91 891 783 3155</a>
+                    <a href="tel:+918917833155" class="topbar-phone"><i class="fas fa-phone-alt me-2"></i>+91 891 783 3155</a>
                 </div>
             </div>
         </div>
@@ -310,7 +289,7 @@ REPLACE: href="tel:+918917833155"
 <li><a class="dropdown-item" href="index.html#allergy">Allergy</a></li>
 <li><a class="dropdown-item" href="index.html#back-pain">Back Pain</a></li>
 <li><a class="dropdown-item" href="index.html#children">Children Diseases</a></li>
-<li><a class="dropdown-item" href="index.html#height-increase">Height Increase</a></li>
+<li><a class="dropdown-item" href="index.html#height">Height Increase</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
@@ -345,7 +324,7 @@ REPLACE: href="tel:+918917833155"
                             <div class="info-card-icon"><i class="fas fa-phone-alt"></i></div>
                             <div>
                                 <div class="info-card-label">Call for Appointment</div>
-                                <a href="tel:+91 891 783 3155" class="info-card-phone">+91 891 783 3155</a>
+                                <a href="tel:+918917833155" class="info-card-phone">+91 891 783 3155</a>
                             </div>
                         </div>
                         <div class="clinic-hours-card">
@@ -415,7 +394,7 @@ REPLACE: href="tel:+918917833155"
         </div>
     </section>
     <!-- Testimonials -->
-   <div class="testimonials-grid">
+   <div class="testimonials-grid" id="testimonials">
 
     <!-- Card 1: Pragya -->
     <div class="testimonial-card-small">
@@ -527,7 +506,7 @@ I would highly recommend Dr. Abhishek Jain to anyone looking for a trusted homeo
   Opposite Pragati Kendra,<br>
   Lucknow, UP 226024
 </address></li>
-                        <li><i class="fas fa-phone-alt"></i> <a href="tel:+91 891 783 3155">+91 891 783 3155</a></li>
+                        <li><i class="fas fa-phone-alt"></i> <a href="tel:+918917833155">+91 891 783 3155</a></li>
                    <li><i class="fas fa-phone-alt"></i><a href="tel:+919935224400">+91 993 522 4400</a></li>
                     </ul>
                 </div>
