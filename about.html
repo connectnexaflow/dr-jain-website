@@ -37,30 +37,35 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="about.css">
 
+<!-- =====================================================================
+STEP 1 (REPLACE): In about.html <head>, delete the ENTIRE existing
+<script type="application/ld+json"> ... </script> block and paste this
+in the same place (just before </head>).
+===================================================================== -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
-
     {
       "@type": "WebSite",
       "@id": "https://drjainhomeopathy.in/#website",
       "url": "https://drjainhomeopathy.in/",
       "name": "Dr. Abhishek Jain Homeopathic Clinic",
-      "inLanguage": "en-IN"
+      "inLanguage": "en-IN",
+      "publisher": { "@id": "https://drjainhomeopathy.in/#clinic" }
     },
-
     {
-      "@type": "WebPage",
+      "@type": ["WebPage", "AboutPage"],
       "@id": "https://drjainhomeopathy.in/about.html#webpage",
       "url": "https://drjainhomeopathy.in/about.html",
       "name": "About Dr. Abhishek Jain (BHMS) – Best Homeopathy Doctor in Lucknow",
       "description": "Dr. Abhishek Jain (BHMS) is a trusted homeopathic doctor in Lucknow with 15+ years of experience in skin, thyroid, PCOD, Fibroadenoma and children's health.",
       "inLanguage": "en-IN",
       "isPartOf": { "@id": "https://drjainhomeopathy.in/#website" },
-      "about": { "@id": "https://drjainhomeopathy.in/#doctor" },
+      "mainEntity": { "@id": "https://drjainhomeopathy.in/#doctor" },
+      "about": { "@id": "https://drjainhomeopathy.in/#clinic" },
       "datePublished": "2024-01-01",
-      "dateModified": "2026-06-01",
+      "dateModified": "2026-10-07",
       "breadcrumb": { "@id": "https://drjainhomeopathy.in/about.html#breadcrumb" },
       "primaryImageOfPage": {
         "@type": "ImageObject",
@@ -69,33 +74,23 @@
         "height": 1000
       }
     },
-
     {
       "@type": "BreadcrumbList",
       "@id": "https://drjainhomeopathy.in/about.html#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://drjainhomeopathy.in/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "About Dr. Abhishek Jain",
-          "item": "https://drjainhomeopathy.in/about.html"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://drjainhomeopathy.in/" },
+        { "@type": "ListItem", "position": 2, "name": "About Dr. Abhishek Jain", "item": "https://drjainhomeopathy.in/about.html" }
       ]
     },
-
     {
-      "@type": "Person",
+      "@type": ["Person", "Physician"],
       "@id": "https://drjainhomeopathy.in/#doctor",
       "name": "Dr. Abhishek Jain",
+      "honorificPrefix": "Dr.",
       "jobTitle": "Homeopathic Physician (BHMS)",
-      "description": "Dr. Abhishek Jain (BHMS) is a specialist homeopathic doctor in Lucknow with over 15 years of experience, known for expertise in skin diseases, children's health, thyroid disorders, PCOD, Fibroadenoma, and various chronic ailments.",
+      "description": "Dr. Abhishek Jain (BHMS) is a homeopathic doctor in Lucknow with over 15 years of experience in skin diseases, children's health, thyroid disorders, PCOD, Fibroadenoma and chronic ailments.",
       "image": "https://drjainhomeopathy.in/dr-abhishek-jain.webp",
+      "url": "https://drjainhomeopathy.in/about.html",
       "email": "drabhishekj@gmail.com",
       "telephone": ["+918917833155", "+919935224400"],
       "hasCredential": {
@@ -115,32 +110,25 @@
         "Migraine Treatment",
         "Allergy Treatment"
       ],
-      "worksFor": { "@id": "https://drjainhomeopathy.in/#clinic" },
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "9, Kapoorthala Road, Ram Sanehi Ghat, Opposite Pragati Kendra",
-        "addressLocality": "Aliganj",
-        "addressRegion": "Uttar Pradesh",
-        "postalCode": "226024",
-        "addressCountry": "IN"
-      },
-      "url": "https://drjainhomeopathy.in/about.html",
-      "sameAs": [
-        "https://drjainhomeopathy.in/about.html"
-      ]
+      "worksFor": { "@id": "https://drjainhomeopathy.in/#clinic" }
     },
-
     {
-      "@type": ["MedicalBusiness", "Physician"],
+      "@type": "MedicalClinic",
       "@id": "https://drjainhomeopathy.in/#clinic",
       "name": "Dr. Abhishek Jain Homeopathic Clinic",
       "url": "https://drjainhomeopathy.in/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://drjainhomeopathy.in/logo.png"
+      },
+      "image": "https://drjainhomeopathy.in/dr-abhishek-jain.webp",
       "telephone": ["+918917833155", "+919935224400"],
       "email": "drabhishekj@gmail.com",
+      "priceRange": "₹500",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "9, Kapoorthala Road, Ram Sanehi Ghat, Opposite Pragati Kendra",
-        "addressLocality": "Aliganj",
+        "streetAddress": "9, Kapoorthala Road, Ram Sanehi Ghat, Aliganj, Opposite Pragati Kendra",
+        "addressLocality": "Lucknow",
         "addressRegion": "Uttar Pradesh",
         "postalCode": "226024",
         "addressCountry": "IN"
@@ -150,16 +138,17 @@
         "latitude": 26.8756,
         "longitude": 80.9425
       },
+      "areaServed": { "@type": "City", "name": "Lucknow" },
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
           "opens": "11:00",
           "closes": "14:00"
         },
         {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
           "opens": "17:30",
           "closes": "20:30"
         },
@@ -169,9 +158,9 @@
           "opens": "11:00",
           "closes": "14:00"
         }
-      ]
+      ],
+      "employee": { "@id": "https://drjainhomeopathy.in/#doctor" }
     },
-
     {
       "@type": "FAQPage",
       "@id": "https://drjainhomeopathy.in/about.html#faq",
@@ -186,10 +175,10 @@
         },
         {
           "@type": "Question",
-          "name": "What is Dr. Abhishek Jain's area of expertise?",
+          "name": "What conditions does Dr. Abhishek Jain treat?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Dr. Abhishek Jain specialises in skin diseases, children's health, thyroid disorders, PCOD, Fibroadenoma, hair loss, sinusitis, migraine, allergies, and various chronic ailments."
+            "text": "Dr. Abhishek Jain treats skin diseases, children's health problems, thyroid disorders, PCOD, Fibroadenoma, hair loss, sinusitis, migraine, allergies and various chronic ailments."
           }
         },
         {
@@ -197,7 +186,7 @@
           "name": "What is the consultation fee at Dr. Abhishek Jain's clinic?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The consultation fee is ₹500, which is valid for 15 days from the date of visit."
+            "text": "The consultation fee is ₹500, valid for 15 days from the date of visit."
           }
         },
         {
@@ -205,15 +194,78 @@
           "name": "Does Dr. Abhishek Jain offer online consultations?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, Dr. Abhishek Jain offers online homeopathic consultations via Google Meet and WhatsApp. Medicines are dispatched by courier pan-India after consultation."
+            "text": "Yes, online homeopathic consultations are available via Google Meet and WhatsApp. Medicines are sent by courier after the consultation."
           }
         }
       ]
     }
-
   ]
 }
 </script>
+
+
+<!-- =====================================================================
+STEP 2 (ADD): Visible FAQ section. FAQPage schema is only valid if these
+Q&As are visible on the page. Paste it between the "Why Homeopathy"
+</section> and the "<!-- Testimonials -->" comment. Edit any answer that
+is not true for your clinic, and keep the text identical to the schema.
+===================================================================== -->
+<section class="faq-section section-padding" id="faq">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <span class="section-eyebrow">FAQs</span>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true">What is Dr. Abhishek Jain's qualification?</button>
+                </h3>
+                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">Dr. Abhishek Jain holds a Bachelor of Homeopathic Medicine and Surgery (BHMS) degree and has over 15 years of clinical experience in homeopathic treatment.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false">What conditions does Dr. Abhishek Jain treat?</button>
+                </h3>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">Dr. Abhishek Jain treats skin diseases, children's health problems, thyroid disorders, PCOD, Fibroadenoma, hair loss, sinusitis, migraine, allergies and various chronic ailments.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false">What is the consultation fee at Dr. Abhishek Jain's clinic?</button>
+                </h3>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">The consultation fee is ₹500, valid for 15 days from the date of visit.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false">Does Dr. Abhishek Jain offer online consultations?</button>
+                </h3>
+                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">Yes, online homeopathic consultations are available via Google Meet and WhatsApp. Medicines are sent by courier after the consultation.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- =====================================================================
+STEP 3 (FIND / REPLACE): Fix the broken #testimonials anchor
+(your nav and footer link to #testimonials but no element has that id)
+
+FIND:    <div class="testimonials-grid">
+REPLACE: <div class="testimonials-grid" id="testimonials">
+
+STEP 4 (FIND / REPLACE, 3 places): phone links with spaces don't dial reliably
+
+FIND:    href="tel:+91 891 783 3155"
+REPLACE: href="tel:+918917833155"
+===================================================================== -->
 
 </head>
 <body>
