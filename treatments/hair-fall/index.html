@@ -456,6 +456,9 @@ p+p{margin-top:12px}
 .slide{flex:0 0 88%;scroll-snap-align:start;background:#fff;border:1px solid var(--bd);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:10px}
 .slide .stars{color:#8a6d1f;letter-spacing:2px;font-size:18px}
 .slide blockquote{font-size:15.5px;color:var(--td);flex:1}
+.slide blockquote.clamp{display:-webkit-box;-webkit-line-clamp:6;line-clamp:6;-webkit-box-orient:vertical;overflow:hidden}
+.rm{align-self:flex-start;background:none;border:0;padding:8px 0;min-height:44px;font:600 14.5px var(--fb);color:var(--gm);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.rm:hover{color:var(--gd)}
 .slide cite{font-style:normal;font-weight:600;color:var(--gd);font-size:14.5px}
 .slide small{display:block;color:var(--tm);font-size:12.5px;font-weight:400}
 .cbtns{display:flex;gap:10px;justify-content:center;margin-top:6px}
@@ -1049,6 +1052,34 @@ footer small{display:block;margin-top:10px;color:rgba(255,255,255,.65)}
   function go(d){var s=t.querySelector('.slide');if(!s)return;t.scrollBy({left:d*(s.offsetWidth+16),behavior:'smooth'});}
   document.getElementById('rv-prev').addEventListener('click',function(){go(-1)});
   document.getElementById('rv-next').addEventListener('click',function(){go(1)});
+
+  /* Read more / Read less for long reviews */
+  function setupReadMore(){
+    t.querySelectorAll('.slide blockquote').forEach(function(q){
+      if(q.dataset.rm)return;
+      q.dataset.rm='1';
+      q.classList.add('clamp');
+      if(q.scrollHeight<=q.clientHeight+2){q.classList.remove('clamp');return;}
+      var b=document.createElement('button');
+      b.type='button';b.className='rm';b.textContent='Read more';
+      b.setAttribute('aria-expanded','false');
+      b.addEventListener('click',function(){
+        var open=q.classList.toggle('clamp')===false;
+        b.textContent=open?'Read less':'Read more';
+        b.setAttribute('aria-expanded',open?'true':'false');
+      });
+      q.insertAdjacentElement('afterend',b);
+    });
+  }
+  setupReadMore();
+  window.addEventListener('load',setupReadMore);
+  window.addEventListener('resize',function(){
+    t.querySelectorAll('.slide blockquote').forEach(function(q){
+      if(q.nextElementSibling&&q.nextElementSibling.classList.contains('rm'))return;
+      q.dataset.rm='';
+    });
+    setupReadMore();
+  });
 })();
 </script>
 </body>
